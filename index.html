@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html>
+<head>
+	    <meta charset="utf-8">
+
+	<title></title>
+	     	<link rel="stylesheet" href="css/style.css">
+	     	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	     	<style type="text/css">
+
+	     		*,*:after, *:before{
+	     			margin:0;
+	     			padding: 0;
+	     			box-sizing: border-box;
+	     		}
+
+	     		body{
+	     			font-family: 'Motserrat' , sans-serif;
+	     		}
+
+	     		section.header{
+                     height: 650px;
+                     background-image:url("https://modo3.com/thumbs/fit630x300/40992/1439376097/%D8%A3%D9%8A%D9%86_%D8%AA%D9%82%D8%B9_%D8%AC%D8%A8%D8%A7%D9%84_%D8%A5%D9%81%D8%B1%D8%B3%D8%AA.jpg");
+                     background-size: cover;
+                     background-repeat: no-repeat;
+                     position: relative;
+                 }
+
+	     		.container{
+	     			width: 1100px;
+	     			margin: auto;
+	     		}
+
+	     		section.header div.header_head{
+	     			padding-top: 25px
+	     		}
+
+
+	     		section.header div.header_head img{
+	     			float: left;
+	     			width: 60px
+	     		}
+
+
+	     		section.header div.header_head nav{
+	     			float: right;
+	     		}
+
+
+	     		section.header div.header_head nav ul li{
+	     			display: inline-block;
+	     			padding-left: 10px;
+	     		}
+
+
+	     		section.header div.header_head nav ul li a{
+	     			color: white;
+	     			text-decoration: none;
+	     			font-size: 20px;
+	     		}
+
+	     		.clearfix{
+	     			clear:both;
+	     		}
+
+	     		p , span { font-family: 'Raleway' , sans-serif;
+	     		}
+
+	     		section.header div.header-content{
+	     			width: 700px;
+	     			margin-bottom: auto;
+	     			position: absolute;
+	     			top: 50%;
+	     			left:50%;
+	     			transform: translate(-50%,-50%);
+	     			text-align: center;
+
+
+	     		}
+
+	     		section.header div.header-content h2{
+	     			font-size: 50px;
+	     			font-weight: bold;
+	     			color: white;
+	     			margin-bottom: 2%
+
+	     		}
+
+	     		section.header div.header-content p{
+                   font-size: 20px;
+                   color: white;
+                   margin-bottom: 2%
+
+	     		}
+
+	     		section.header div.header-content button{
+	     			width: 180px;
+	     			border:0;
+	     			outline: none;
+	     			padding: 20px;
+	     			font-size: 15px;
+	     			margin-left: 3%;
+	     			border-radius: 7px;
+	     			text-transform: uppercase;
+	     			cursor: pointer;
+	     			transition: all 0.5s ease-in-out;
+	     		}
+
+	     		section.header div.header-content button:first-child{
+	     			background:white;
+	     			color: black;
+	     		}
+
+	     		section.header div.header-content button:last-child{
+	     			background:#8be2e5;
+	     			color: white;
+	     		}
+
+
+
+	     		section.header div.header-content button:last-child:hover{
+	     			background:#f50;
+	     		}
+
+	     		section.header .header-footer{
+	     			width: 30px;
+	     			height: 53px;
+	     			position: absolute;
+	     			bottom: 10%;
+	     			left: 50%; 
+	     			border: 2px solid #fff;
+	     			border-radius: 18px
+
+	     		}
+
+	     		section.header .header-footer .scroll{
+	     			width: 5px;
+	     			height: 10px;
+	     			background:white;
+	     			margin: auto;
+	     			position: relative;
+	     			top: 4px;
+	     			animation: scrolling 1s ease-in-out infinite;
+	     		}
+
+	     		@keyframes scrolling{
+	     			0%{
+	     				opacity: 0;
+	     				top: 5px;
+
+	     			}
+
+	     			30%{
+	     				opacity: 1;
+	     				top: 10px;
+	     			}
+
+	     			100%{
+	     				opacity: 0;
+	     				top: 25px;
+	     			}
+	     		}
+
+	     		section.BeFirst{
+	     			height: 600px;
+	     			background-image: url("data:image/jpeg;base64,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");
+	     			background-repeat: no-repeat;
+	     			background-size: cover;
+	     			padding-top: 10%;
+	     			text-align: center;
+	     			background-attachment: fixed;
+	     			margin-bottom: 20%
+	     			
+	     		}
+
+	     		section.BeFirst .BeFirst-center h2{
+	     			color: white;
+	     			font-weight: bold;
+	     			font-size: 40px
+	     		}
+
+	     			section.BeFirst .BeFirst-center p{
+	     				color: white;
+	     				margin-top: 2%;
+	     				margin-bottom: 2%;
+	     				font-size: 25px;
+
+	     			}
+
+	     				section.BeFirst .BeFirst-img{
+	     					text-align: center;
+
+	     				}
+
+	     				section.BeFirst .BeFirst-img img{
+	     					width: 300px;
+	     				}
+
+	     				section.feature{
+	     					padding-bottom: 20%;
+	     				}
+
+	     				section.feature .feature-feat{
+	     					width: 30%;
+	     					float: left;
+	     					margin-left: 5%;
+	     				}
+
+
+	     				section.feature .feature-feat:nth-of-type(1){
+	     					margin-left: 0;
+	     				}
+
+	     				section.feature .feature-feat:nth-of-type(1) hr{
+	     					height: 5px;
+	     					background:#6d3f96;
+	     					border: 0;
+	     				}
+
+	     				section.feature .feature-feat:nth-of-type(2) hr{
+	     					height: 5px;
+	     					background:#70cbce;
+	     					border: 0;
+	     				}
+
+	     				section.feature .feature-feat:nth-of-type(3) hr{
+	     					height: 5px;
+	     					background:#fdc05d;
+	     					border: 0;
+	     				}
+
+	     				section.feature .feature-feat h2{
+	     					font-size: 18px;
+	     					margin-top: 5%;
+	     					margin-bottom:5%;
+	     				}
+
+	     				section.feature .feature-feat p{
+	     					color: #929496;
+	     					line-height: 1.3;
+	     				}
+
+	     				section.pricing{
+	     					padding-top: 10%;
+	     					padding-bottom: 10%;
+	     					background:#70cbce;
+	     					height: auto;
+	     					text-align: center;
+	     				}
+
+	     				section.pricing h2{
+	     					color: #fff;
+	     					font-size: 45px;
+	     					margin-bottom: 2%;
+	     				}
+
+	     				section.pricing p{
+	     					font-size: 18px;
+	     					color: #fff;
+	     					margin-bottom: 3%;
+	     				}
+
+	     				section.pricing div.pricing-flex{
+	     					display: flex;
+	     					width: 100%;
+	     					justify-content: center;
+	     				}
+
+	     				section.pricing div.pricing-flex div.flex-item{
+	     					width: 32%;
+	     				}
+
+	     				section.pricing div.pricing-flex div.flex-item:nth-of-type(1),
+	     				section.pricing div.pricing-flex div.flex-item:nth-of-type(3){
+	     					margin-top: 2%;
+	     				}
+
+	     				section.pricing div.pricing-flex div.flex-item ul{
+	     					list-style: none;
+	     					background:white;
+	     					border-top-left-radius: 10px;
+	     					border-top-right-radius: 10px;
+	     				    transition: all 0.5s ease-in-out
+
+	     				}
+
+	     	     		section.pricing div.pricing-flex div.flex-item ul:hover{
+	     	     			margin-top: -10px;
+	     	     		}
+
+	     	     		section.pricing div.pricing-flex div.flex-item ul:hover li.doller{
+                         background:#333;
+                     }
+
+	     				section.pricing div.pricing-flex div.flex-item ul li.price{
+	     					background:#231f20;
+	     					color: white;
+	     					padding: 20px;
+	     					border-top-left-radius: 10px;
+	     					border-top-right-radius: 10px;
+
+	     				}
+
+
+	     				section.pricing div.pricing-flex div.flex-item ul li.doller{
+	     					background:#231f20;
+	     					color: white;
+	     					padding: 15px;
+	     					font-size: 30px;
+	     					font-weight: bold;
+
+	     				}
+
+
+	     				section.pricing div.pricing-flex div.flex-item ul li.doller small{
+	     					font-weight: normal;
+	     					color: #929496;
+	     				}
+
+
+
+
+	     				section.pricing div.pricing-flex div.flex-item ul li.list{
+	     					padding: 20px;
+	     					border-bottom: 1px dotted #E8EAEA;
+	     					font-weight: bold;
+	     				}
+
+                         section.pricing div.pricing-flex div.flex-item ul li.content{
+	     					color: #929496;
+	     					padding: 20px;
+	     					font-size: 12px;
+	     					font-weight: normal;
+	     				}
+
+
+                         section.pricing div.pricing-flex div.flex-item ul li.btn{
+                         	padding: 15px;
+                         	color: #70cbce;
+                         	text-transform:uppercase;
+                         	cursor: pointer;
+                         }
+
+                          section.pricing div.pricing-flex div.flex-item ul li.btn:hover{
+                          	background:#f5f5f5;
+                           }
+
+                           section.invite{
+                           	height: auto;
+                           	padding-top: 10%;
+                           	padding-bottom: 10%;
+                           	background:#f5f5f5;
+                           	text-align: center;
+                           }
+
+                           section.invite div i{
+                           	color: #70cbce;
+                           	border:2px solid #70cbce;
+                           	border-radius: 30px;
+                           	padding: 20px;
+                           	margin-bottom: 2%;
+                           }
+
+                            section.invite div h2{
+                            	font-size: 40px;
+                            	margin-bottom: 2%;
+                            }
+
+                             section.invite div p{
+                             	margin-bottom: 2%;
+                             }
+
+                              section.invite div input{
+                              	display: block;
+                              	width: 300px;
+                              	margin: auto;
+                              	height: 50px;
+                              	border: 0;
+                              	padding: 10px;
+                              	outline: 0;
+                              	margin-bottom: 2%;
+                              	border-radius: 10px;
+                              }
+
+                               section.invite div input::-webkit-input-placeholder{
+                               	color: #aaa;
+                               }
+
+                                section.invite div button{
+                                	width: 200px;
+                                	height:50px;
+                                	background:#70cbce;
+                                	padding: 10px;
+                                	border: 0;
+                                	outline: 0;
+                                	cursor:pointer;
+                                	text-transform: uppercase;
+                                	color: white;
+
+                                }
+
+                                section.info{
+                                	padding-top: 10%;
+                                	padding-bottom: 10%;
+                                }
+
+                                section.info div.info-desc{
+                                	width: 70%;
+                                	margin: auto;
+                                }
+
+                                 section.info div.info-desc div.info-img{
+                                 	width: 20%;
+                                 }
+
+
+                                 section.info div.info-desc div.info-information{
+                                 	width: 80%;
+                                 	float: left;
+                                 	margin-bottom: 5%;
+                                 	margin-top: 1px;
+                                 }
+
+                                 section.info hr{
+                                 	height: 2px;
+                                 	border: 0;
+                                 	background:#E8EAEA;
+                                 }
+
+                                    section.info div.info-desc div.info-img img{
+                                    	width: 100px;
+                                    	float: left;
+                                    	margin-right: 20px
+                                    }
+
+                                    footer{
+                                    	padding-bottom: 5%;
+                                    }
+
+                                    footer div.left{
+                                    	float: left;
+                                    }
+                                     footer div.left span{
+                                     }
+                                     
+                                     footer div.right{
+                                     	float: right;
+                                     }
+                                      footer div.right span{
+                                      	color: #ccc;
+                                      }
+
+	     	</style>
+
+</head>
+<body>
+<section class="header">
+	<div class="container">
+	<div class="header_head">
+         <img src="aya/logo.jpg" alt="logo">
+         <nav>
+         	<ul>
+         		<li><a href="#">Pricing</a></li>
+         		<li><a href="#">Sign In</a></li>
+
+         	</ul>
+         </nav>
+		
+	</div>
+	<div class="clearfix"></div>
+	<div class="header-content">
+		<h2>A free landing page theme</h2>
+		<br>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque auctor suscipit feugiat. Ut at pellentesque ante, sed convallis arcu. </p>
+        <br>
+        <button>Leearn More</button>
+        <button>Request nvite</button>
+
+	</div>
+	<div class="header-footer">
+		<div class="scroll">
+		</div>
+	</div>
+</div>
+</section>
+
+<section class="BeFirst">
+	<div class="container">
+		<div class="BeFirst-center">
+			<h2>Be the first</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+			
+		</div>
+		<div class="BeFirst-img">
+			<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/IPhone_XS_Max_Silver.svg/1200px-IPhone_XS_Max_Silver.svg.png" alt="phone">
+
+		</div>
+	</div>
+	
+</section>
+
+<section class="feature">
+	<div class="container">
+		<div class="feature-feat">
+			<hr>
+			<h2>App Feature One Here</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque auctor suscipit feugiat. Ut at pellentesque ante, sed convallis arcu.</p>
+			
+		</div>
+		<div class="feature-feat">
+			<hr>
+			<h2>App Feature One Here</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque auctor suscipit feugiat. Ut at pellentesque ante, sed convallis arcu.</p>
+			
+		</div>
+		<div class="feature-feat">
+			<hr>
+			<h2>App Feature One Here</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque auctor suscipit feugiat. Ut at pellentesque ante, sed convallis arcu.</p>
+			
+		</div>
+		
+		
+	</div>
+	
+</section>
+
+<section class="pricing">
+	<div class="container">
+		<h2>Pricing</h2>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque auctor suscipit feugiat.</p>
+		 
+		 <div class="pricing-flex">
+		 	<div class="flex-item">
+		 		<ul>
+		 			<li class="price"><h3>Personal</h3></li>
+		 			<li class="doller">$5<small>/m</small></li>
+		 			<li class="content list">2 row section for you package information. You can include all details or icons</li>
+		 			<li class="list">Up To 25 Projects</li>
+		 			<li class="list">10GB Storage</li>
+		 			<li class="list">Other info</li>
+		 			<li class="btn">Get Started</li>
+		 		</ul>
+		 	</div>
+ 		 	<div class="flex-item">
+ 		 		<ul>
+		 			<li class="price"><h3>Personal</h3></li>
+		 			<li class="doller">$12<small>/m</small></li>
+		 			<li class="content list">2 row section for you package information. You can include all details or icons</li>
+		 			<li class="list">Up To 25 Projects</li>
+		 			<li class="list">10GB Storage</li>
+		 			<li class="list">Other info</li>
+		 			<li class="btn">Get Started</li>
+		 		</ul>
+ 		 	</div>
+		 	<div class="flex-item">
+		 		<ul>
+		 			<li class="price"><h3>Personal</h3></li>
+		 			<li class="doller">$24<small>/m</small></li>
+		 			<li class="content list">2 row section for you package information. You can include all details or icons</li>
+		 			<li class="list">Up To 25 Projects</li>
+		 			<li class="list">10GB Storage</li>
+		 			<li class="list">Other info</li>
+		 			<li class="btn">Get Started</li>
+		 		</ul>
+		 	</div>
+		 		
+		 	 
+		 </div>
+	</div>
+	
+</section>
+
+<section class="invite">
+	<div class="container">
+		<i class="icon fa fa-envelope-o fa-lg"></i>
+			<h2>Get the invite</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque auctor suscipit feugiat.</p>
+			<input type="text" placeholder="Enter Email">
+			<button>Request Invite</button> 
+		
+	</div>
+	
+</section>
+
+<section class="info">
+	<div class="container">
+		<div class="info-desc">
+		<div class="info-img">
+			<img src="aya/logo.jpg" alt="logo">
+			
+		</div>
+		<div class="info-information">
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque auctor suscipit feugiat. Ut at pellentesque ante, sed convallis arcu.</p>
+			<br>
+			<span>Tech Crunch Han 15 2015</span>
+			
+		</div>
+	</div>
+	<div class="clearfix"></div>
+	<hr>
+	<br>
+		<div class="info-desc">
+		<div class="info-img">
+			<img src="aya/flooop.png" alt="logo">
+			
+		</div>
+		<div class="info-information">
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque auctor suscipit feugiat. Ut at pellentesque ante, sed convallis arcu.</p>
+			<br>
+			<span>Tech Crunch Han 15 2015</span>
+
+		</div>
+	</div>
+	<div class="clearfix"></div>
+	<hr>
+	<br>
+</div>
+	
+</section>
+
+<footer>
+	<div class="container">
+		<div class="left">
+		<span>Connect with us on</span>
+		<i class="fa fa-twitter"></i>
+		<i class="fa fa-facebook"></i>
+		<i class="fa fa-instagram"></i>
+	</div>
+	<div class="right">
+		<span>Copyright &copy; 2014. All rights reversed.</span>
+		<br>
+		<span>Created by Visual Soldiers</span>
+
+		
+	</div>
+	
+</footer>
+
+</body>
+</html>
